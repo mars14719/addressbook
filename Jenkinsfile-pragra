@@ -13,7 +13,8 @@ pipeline {
             }
             post {
                 always {
-                    junit 'target/surefire-reports/*.xml'
+                    sh 'Archiving artifacts'
+                    archiveArtifacts artifacts: 'target/*.war', followSymlinks: false, onlyIfSuccessful: true
                 }
             }
         }
