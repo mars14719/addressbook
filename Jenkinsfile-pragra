@@ -11,12 +11,12 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
-            post {
-                always {
-                    sh 'Archiving artifacts'
-                    archiveArtifacts artifacts: 'target/*.war', followSymlinks: false, onlyIfSuccessful: true
-                }
-            }
+    //        post {
+    //            always {
+    //                sh 'Archiving artifacts'
+    //                archiveArtifacts artifacts: 'target/*.war', followSymlinks: false, onlyIfSuccessful: true
+    //            }
+    //        }
         }
         // stage('Deliver') {
         //     steps {
